@@ -1,10 +1,9 @@
-CFLAGS = -c -Wall
+default: all
 
-cat: cat.o
-	gcc cat.o -o cat
+all: $(BIN)cat
 
-cat.o: cat.c
-	gcc $(CFLAGS) cat.c
+cat:
+	gcc cat.c -o $(BIN)cat
 
 clean:
-	rm cat cat.o
+	rm -f $(BIN)cat
